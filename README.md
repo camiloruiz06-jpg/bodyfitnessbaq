@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gimnasio Body Fitness — Página web
 
-## Getting Started
+Landing page de **Gimnasio Body Fitness** (Barranquilla, Colombia).
+Gimnasio · Rumbaterapia · Boxeo — _"Tu único límite eres TÚ"_.
 
-First, run the development server:
+Construida con **Next.js (App Router, JavaScript)**, **Tailwind CSS**,
+**Framer Motion** y **react-icons**.
+
+## Cómo correrla en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ✏️ Cómo editar el contenido (sin tocar componentes)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Todo lo editable vive en `src/data/`:
 
-## Learn More
+| Archivo | Qué contiene |
+|---|---|
+| `src/data/site.js` | Nombre, dirección, WhatsApp, Instagram, **horarios** |
+| `src/data/anuncios.js` | ⭐ Promos del carrusel (imágenes en `public/anuncios/`) |
+| `src/data/planes.js` | Planes y **precios** (hoy con placeholders `$XX.XXX`) |
+| `src/data/servicios.js` | Textos de Gimnasio / Rumbaterapia / Boxeo |
+| `src/data/gallery.js` | Links de publicaciones de Instagram para la galería |
 
-To learn more about Next.js, take a look at the following resources:
+Busca los comentarios `👈 CAMBIAR` / `👈 FALTA` dentro de esos archivos.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Assets pendientes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Asset | Dónde ponerlo |
+|---|---|
+| Logo oficial | `public/brand/logo.png` (mientras no exista, sale un logo de texto) |
+| Imágenes de promos | `public/anuncios/` + listarlas en `src/data/anuncios.js` |
+| Fotos del gym | `public/gym/` |
 
-## Deploy on Vercel
+Cada carpeta tiene un `README.txt` con instrucciones.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Pendientes del cliente
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Confirmar horario de la mañana L–V (¿hasta 11:00 a.m. o 12:00 p.m.?)
+- [ ] Precios / planes de mensualidad
+- [ ] Descripciones reales de Rumbaterapia y Boxeo (días/horas de clases)
+- [ ] Logo en `public/brand/logo.png`
+- [ ] Imágenes de promos para el carrusel
+- [ ] Links de publicaciones de Instagram para la galería
+- [ ] ¿Correo del gym? (opcional)
+
+## Fase 2 (preparado, no implementado)
+
+Panel de administración con Sanity (como `babylonink-web`) para que el
+dueño edite anuncios, precios y horarios sin código. La estructura de
+`src/data/` está pensada para migrar fácil a ese esquema.
