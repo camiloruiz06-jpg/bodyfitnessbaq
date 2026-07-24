@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaCheck } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import { planes } from "@/data/planes";
@@ -8,13 +8,13 @@ export default function Planes() {
   return (
     <section id="planes" className="scroll-mt-20 px-4 py-20">
       <div className="mx-auto max-w-6xl">
-        <SectionTitle kicker="Elige el tuyo">
+        <SectionTitle kicker="Tarifas 2025">
           Planes y <span className="brochazo">precios</span>
         </SectionTitle>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {planes.map((plan, i) => (
-            <Reveal key={plan.id} delay={i * 0.12}>
+            <Reveal key={plan.id} delay={(i % 3) * 0.1}>
               <article
                 className={`relative flex h-full flex-col border p-8 ${
                   plan.destacado
@@ -30,23 +30,16 @@ export default function Planes() {
                 <h3 className="titulo-display text-2xl text-hueso">
                   {plan.nombre}
                 </h3>
-                <p className="mt-4">
+                <p className="mt-4 flex-1">
                   <span className="titulo-display text-4xl text-rojo">
                     {plan.precio}
-                  </span>{" "}
-                  <span className="text-sm text-gris-texto">{plan.periodo}</span>
+                  </span>
+                  {plan.periodo && (
+                    <span className="ml-2 text-sm text-gris-texto">
+                      {plan.periodo}
+                    </span>
+                  )}
                 </p>
-                <ul className="mt-6 flex-1 space-y-3">
-                  {plan.detalles.map((detalle) => (
-                    <li key={detalle} className="flex items-start gap-2 text-gris-texto">
-                      <FaCheck
-                        className="mt-1 shrink-0 text-rojo"
-                        aria-hidden="true"
-                      />
-                      {detalle}
-                    </li>
-                  ))}
-                </ul>
                 <a
                   href={whatsappLink(mensajes.plan(plan.nombre))}
                   target="_blank"
@@ -57,7 +50,7 @@ export default function Planes() {
                       : "border-2 border-hueso/40 text-hueso hover:border-rojo hover:text-rojo"
                   }`}
                 >
-                  <FaWhatsapp aria-hidden="true" /> Consultar precio
+                  <FaWhatsapp aria-hidden="true" /> Inscríbete
                 </a>
               </article>
             </Reveal>
@@ -66,8 +59,8 @@ export default function Planes() {
 
         <Reveal delay={0.2}>
           <p className="mt-8 text-center text-sm text-gris-texto">
-            * Escríbenos por WhatsApp para conocer precios actualizados y
-            promociones vigentes.
+            Tarifas 2025 · Escríbenos por WhatsApp si tienes dudas sobre lo que
+            incluye cada plan.
           </p>
         </Reveal>
       </div>

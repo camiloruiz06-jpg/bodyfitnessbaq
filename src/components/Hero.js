@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiArrowDown } from "react-icons/hi";
 import Logo from "@/components/Logo";
+import FondoFoto from "@/components/FondoFoto";
 import { site } from "@/data/site";
 import { whatsappLink, mensajes } from "@/lib/whatsapp";
 
@@ -13,6 +14,9 @@ export default function Hero() {
       id="inicio"
       className="relative flex min-h-[92svh] flex-col items-center justify-center overflow-hidden px-4 pt-24 pb-16 text-center"
     >
+      {/* Foto del gym de fondo (guardar como public/gym/hero.jpg) */}
+      <FondoFoto src="/gym/hero.jpg" opacidad={0.45} />
+
       {/* Manchas rojas decorativas (como los brochazos del flyer) */}
       <div
         aria-hidden="true"
@@ -27,6 +31,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
+        className="relative z-10"
       >
         <Logo tamano="h-24 sm:h-28" className="mx-auto" />
       </motion.div>
@@ -35,7 +40,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.15 }}
-        className="titulo-display mt-8 max-w-4xl text-5xl sm:text-7xl md:text-8xl"
+        className="titulo-display relative z-10 mt-8 max-w-4xl text-5xl sm:text-7xl md:text-8xl"
       >
         Tu único límite
         <br />
@@ -46,7 +51,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-6 max-w-xl text-lg text-gris-texto"
+        className="relative z-10 mt-6 max-w-xl text-lg text-hueso/85"
       >
         Gimnasio · Rumbaterapia · Boxeo en {site.ciudad.split(",")[0]}.
         Entrena duro, siéntete mejor y alcanza tu mejor versión.
@@ -56,7 +61,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.45 }}
-        className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
+        className="relative z-10 mt-10 flex flex-col items-center gap-4 sm:flex-row"
       >
         <a
           href={whatsappLink(mensajes.inscripcion)}

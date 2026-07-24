@@ -1,37 +1,51 @@
 // ============================================================
-// PLANES Y PRECIOS
-// 👈 FALTA: el cliente aún no pasa los precios reales.
-//    Cuando los tenga, reemplazar los "$XX.XXX" de abajo.
-//    Si un plan no existe, simplemente bórralo de la lista.
+// PLANES Y PRECIOS — Tarifas 2025 (del flyer oficial del gym)
+// 👈 CAMBIAR aquí cuando el gym actualice las tarifas.
+// Si un plan no existe más, simplemente bórralo de la lista.
+// "destacado: true" resalta esa tarjeta en rojo.
 // ============================================================
 
 export const planes = [
   {
-    id: "diario",
-    nombre: "Pase del día",
-    precio: "$XX.XXX", // 👈 CAMBIAR: precio real
-    periodo: "por día",
-    detalles: ["Acceso a todas las zonas", "Sin compromiso"],
+    id: "sesion",
+    nombre: "Por Sesión",
+    precio: "$10.000",
+    periodo: "una visita",
     destacado: false,
   },
   {
-    id: "mensual",
-    nombre: "Mensualidad",
-    precio: "$XX.XXX", // 👈 CAMBIAR: precio real
-    periodo: "por mes",
-    detalles: [
-      "Acceso ilimitado al gimnasio",
-      "Clases de rumbaterapia",
-      "Clases de boxeo",
-    ],
-    destacado: true, // el plan destacado se resalta en rojo
+    id: "quincena",
+    nombre: "15 Días",
+    precio: "$80.000",
+    periodo: "media mensualidad",
+    destacado: false,
   },
   {
-    id: "trimestral",
-    nombre: "Trimestre",
-    precio: "$XX.XXX", // 👈 CAMBIAR: precio real
-    periodo: "por 3 meses",
-    detalles: ["Todo lo de la mensualidad", "Mejor precio por mes"],
+    id: "mes1",
+    nombre: "1 Mes",
+    precio: "$100.000",
+    periodo: "por mes",
+    destacado: true, // el más popular
+  },
+  {
+    id: "mes2",
+    nombre: "2 Meses",
+    precio: "$180.000",
+    periodo: "ahorras $20.000",
+    destacado: false,
+  },
+  {
+    id: "mes3",
+    nombre: "3 Meses",
+    precio: "$240.000",
+    periodo: "ahorras $60.000",
+    destacado: false,
+  },
+  {
+    id: "mes6",
+    nombre: "6 Meses",
+    precio: "$450.000",
+    periodo: "ahorras $150.000",
     destacado: false,
   },
 ];

@@ -1,12 +1,18 @@
 import { HiClock } from "react-icons/hi";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
+import FondoFoto from "@/components/FondoFoto";
 import { site } from "@/data/site";
 
 export default function Horarios() {
   return (
-    <section id="horarios" className="scroll-mt-20 bg-carbon/50 px-4 py-20">
-      <div className="mx-auto max-w-3xl">
+    <section
+      id="horarios"
+      className="relative scroll-mt-20 bg-carbon/50 px-4 py-20"
+    >
+      {/* Foto del gym de fondo (guardar como public/gym/horarios.jpg) */}
+      <FondoFoto src="/gym/horarios.jpg" opacidad={0.25} />
+      <div className="relative z-10 mx-auto max-w-3xl">
         <SectionTitle kicker="Te esperamos">
           Nuestros <span className="brochazo">horarios</span>
         </SectionTitle>

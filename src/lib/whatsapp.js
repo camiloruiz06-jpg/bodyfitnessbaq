@@ -13,7 +13,7 @@ export const mensajes = {
   inscripcion:
     "¡Hola! 💪 Quiero inscribirme en Gimnasio Body Fitness. ¿Me dan información?",
   precios: "¡Hola! Quiero saber los precios de los planes del gimnasio.",
-  plan: (plan) => `¡Hola! Quiero saber el precio del plan "${plan}".`,
+  plan: (plan) => `¡Hola! 💪 Quiero inscribirme en el plan "${plan}".`,
   servicio: (servicio) =>
     `¡Hola! Quiero más información sobre ${servicio} en Body Fitness.`,
   promo: "¡Hola! Vi una promo en la página y quiero más información.",

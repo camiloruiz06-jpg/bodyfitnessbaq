@@ -23,9 +23,8 @@ Todo lo editable vive en `src/data/`:
 |---|---|
 | `src/data/site.js` | Nombre, dirección, WhatsApp, Instagram, **horarios** |
 | `src/data/anuncios.js` | ⭐ Promos del carrusel (imágenes en `public/anuncios/`) |
-| `src/data/planes.js` | Planes y **precios** (hoy con placeholders `$XX.XXX`) |
+| `src/data/planes.js` | Planes y **precios** (tarifas 2025 del flyer) |
 | `src/data/servicios.js` | Textos de Gimnasio / Rumbaterapia / Boxeo |
-| `src/data/gallery.js` | Links de publicaciones de Instagram para la galería |
 
 Busca los comentarios `👈 CAMBIAR` / `👈 FALTA` dentro de esos archivos.
 
@@ -35,18 +34,18 @@ Busca los comentarios `👈 CAMBIAR` / `👈 FALTA` dentro de esos archivos.
 |---|---|
 | Logo oficial | `public/brand/logo.png` (mientras no exista, sale un logo de texto) |
 | Imágenes de promos | `public/anuncios/` + listarlas en `src/data/anuncios.js` |
-| Fotos del gym | `public/gym/` |
+| Fotos del gym (fondos) | `public/gym/hero.jpg`, `servicios.jpg`, `horarios.jpg` |
 
 Cada carpeta tiene un `README.txt` con instrucciones.
 
 ## Pendientes del cliente
 
+- [x] Precios / planes de mensualidad (tarifas 2025 ✔)
 - [ ] Confirmar horario de la mañana L–V (¿hasta 11:00 a.m. o 12:00 p.m.?)
-- [ ] Precios / planes de mensualidad
 - [ ] Descripciones reales de Rumbaterapia y Boxeo (días/horas de clases)
 - [ ] Logo en `public/brand/logo.png`
 - [ ] Imágenes de promos para el carrusel
-- [ ] Links de publicaciones de Instagram para la galería
+- [ ] Fotos del gym para los fondos (`public/gym/`)
 - [ ] ¿Correo del gym? (opcional)
 
 ## Fase 2 (preparado, no implementado)

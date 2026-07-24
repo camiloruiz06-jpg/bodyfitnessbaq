@@ -3,6 +3,7 @@ import { GiBoxingGlove } from "react-icons/gi";
 import { FaWhatsapp } from "react-icons/fa";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
+import FondoFoto from "@/components/FondoFoto";
 import { servicios } from "@/data/servicios";
 import { whatsappLink, mensajes } from "@/lib/whatsapp";
 
@@ -14,8 +15,13 @@ const iconos = {
 
 export default function Servicios() {
   return (
-    <section id="servicios" className="scroll-mt-20 bg-carbon/50 px-4 py-20">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="servicios"
+      className="relative scroll-mt-20 bg-carbon/50 px-4 py-20"
+    >
+      {/* Foto del gym de fondo (guardar como public/gym/servicios.jpg) */}
+      <FondoFoto src="/gym/servicios.jpg" opacidad={0.2} />
+      <div className="relative z-10 mx-auto max-w-6xl">
         <SectionTitle kicker="Lo que ofrecemos">
           Nuestros <span className="brochazo">servicios</span>
         </SectionTitle>

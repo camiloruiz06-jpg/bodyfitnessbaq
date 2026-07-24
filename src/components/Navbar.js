@@ -13,7 +13,6 @@ const enlaces = [
   { href: "#servicios", texto: "Servicios" },
   { href: "#planes", texto: "Planes" },
   { href: "#horarios", texto: "Horarios" },
-  { href: "#galeria", texto: "Galería" },
   { href: "#contacto", texto: "Contacto" },
 ];
 
