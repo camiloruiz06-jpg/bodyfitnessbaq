@@ -15,7 +15,7 @@ export default function Planes() {
         </SectionTitle>
 
         <Reveal>
-          <div className="mx-auto max-w-xl border border-borde bg-hueso shadow-[0_0_60px_rgba(224,32,32,0.12)]">
+          <div className="mx-auto max-w-xl border border-borde bg-carbon shadow-[0_0_60px_rgba(224,32,32,0.12)]">
             {/* Encabezado del panel */}
             <div className="bg-rojo px-6 py-4 text-center">
               <p className="titulo-display text-2xl text-hueso">
@@ -23,7 +23,7 @@ export default function Planes() {
               </p>
             </div>
 
-            <ul className="divide-y divide-negro/10 px-4 py-2 sm:px-6">
+            <ul className="divide-y divide-borde px-4 py-2 sm:px-6">
               {planes.map((plan) => (
                 <li key={plan.id} className="relative">
                   {plan.destacado && (
@@ -41,11 +41,11 @@ export default function Planes() {
                     }`}
                   >
                     <span className="shrink-0">
-                      <span className="block font-bold uppercase tracking-wide text-negro">
+                      <span className="block font-bold uppercase tracking-wide text-hueso">
                         {plan.nombre}
                       </span>
                       {plan.periodo && (
-                        <span className="block text-xs text-negro/50">
+                        <span className="block text-xs text-gris-texto">
                           {plan.periodo}
                         </span>
                       )}
@@ -53,7 +53,7 @@ export default function Planes() {
                     {/* Línea punteada como en el flyer */}
                     <span
                       aria-hidden="true"
-                      className="mx-1 flex-1 border-b-2 border-dotted border-negro/25"
+                      className="mx-1 flex-1 border-b-2 border-dotted border-hueso/20"
                     />
                     <span className="titulo-display shrink-0 text-2xl text-rojo sm:text-3xl">
                       {plan.precio}

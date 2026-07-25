@@ -21,7 +21,7 @@ export default function Logo({ className = "", tamano = "h-12" }) {
       <img
         src={RUTA_LOGO}
         alt="Logo Gimnasio Body Fitness"
-        className={`${tamano} w-auto ${className}`}
+        className={`${tamano} aspect-square w-auto rounded-full object-cover ring-2 ring-rojo/70 ${className}`}
       />
     );
   }

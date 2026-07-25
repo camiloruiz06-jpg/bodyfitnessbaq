@@ -44,4 +44,21 @@ export const site = {
 
   // Resumen corto para el footer / contacto
   horarioResumen: "L–V: 5am–11am y 2:30pm–8pm · Sáb: 7am–12pm",
+
+  // ----------------------------------------------------------
+  // Versión numérica de los horarios (para el aviso "Abierto /
+  // Cerrado ahora" de la página). Horas en formato 24h; las
+  // medias horas van con decimales (14.5 = 2:30 p.m.).
+  // 👈 CAMBIAR junto con los horarios de arriba si cambian.
+  // ----------------------------------------------------------
+  bloquesSemana: {
+    lunesAViernes: [
+      [5, 11], // 5:00 a.m. – 11:00 a.m.
+      [14.5, 20], // 2:30 p.m. – 8:00 p.m.
+    ],
+    sabado: [
+      [7, 12], // 7:00 a.m. – 12:00 p.m.
+    ],
+    // domingo: cerrado (no hay bloques)
+  },
 };
