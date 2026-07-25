@@ -25,7 +25,31 @@
 // ============================================================
 
 export const anuncios = [
-  // 👈 CAMBIAR: agregar aquí las promos reales. Ejemplos:
-  // { imagen: "/anuncios/anuncio-1.jpg", alt: "Promo 2x1 de enero" },
+  {
+    imagen: "/anuncios/anuncio-4.jpg",
+    alt: "Sé tu mejor versión — ¡inscríbete hoy en Gimnasio Body Fitness!",
+  },
+  {
+    imagen: "/anuncios/anuncio-1.jpg",
+    alt: "Promoción entrena en compañía: 2 personas por $160.000, solo clientes nuevos",
+  },
+  {
+    imagen: "/anuncios/anuncio-6.jpg",
+    alt: "Entrená con propósito — Gimnasio Body Fitness",
+  },
+  {
+    imagen: "/anuncios/anuncio-5.jpg",
+    alt: "Sé mejor que ayer",
+  },
+  {
+    imagen: "/anuncios/anuncio-2.jpg",
+    alt: "Modo fútbol: hoy juega la selección Colombia",
+  },
+  {
+    imagen: "/anuncios/anuncio-3.jpg",
+    alt: "Feliz Día del Padre de parte de Gimnasio Body Fitness",
+  },
+  // 👈 CAMBIAR: para agregar más, sigue los ejemplos:
+  // { imagen: "/anuncios/anuncio-7.jpg", alt: "Descripción de la promo" },
   // { instagram: "https://www.instagram.com/p/ABC123xyz/" },
 ];
