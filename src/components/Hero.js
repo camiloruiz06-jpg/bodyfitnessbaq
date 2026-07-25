@@ -5,10 +5,10 @@ import { FaWhatsapp } from "react-icons/fa";
 import { HiArrowDown } from "react-icons/hi";
 import Logo from "@/components/Logo";
 import FondoFoto from "@/components/FondoFoto";
-import { site } from "@/data/site";
+import { site as siteEstatico } from "@/data/site";
 import { whatsappLink, mensajes } from "@/lib/whatsapp";
 
-export default function Hero() {
+export default function Hero({ site = siteEstatico }) {
   return (
     <section
       id="inicio"
@@ -64,7 +64,7 @@ export default function Hero() {
         className="relative z-10 mt-10 flex flex-col items-center gap-4 sm:flex-row"
       >
         <a
-          href={whatsappLink(mensajes.inscripcion)}
+          href={whatsappLink(mensajes.inscripcion, site.whatsapp)}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 bg-rojo px-8 py-4 text-lg font-bold uppercase tracking-wide text-hueso transition-transform hover:scale-105 hover:bg-rojo-oscuro"

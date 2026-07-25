@@ -1,0 +1,16 @@
+{"_id":"siteSettings","_type":"siteSettings","whatsapp":"573008945143","direccion":"Cra 42 # 82A-36, Barranquilla","instagramUrl":"https://www.instagram.com/bodyfitnessbq","instagramUsuario":"@bodyfitnessbq","lvBloques":[{"_type":"bloqueHorario","_key":"lv1","desde":5,"hasta":11},{"_type":"bloqueHorario","_key":"lv2","desde":14.5,"hasta":20}],"sabadoBloques":[{"_type":"bloqueHorario","_key":"sab1","desde":7,"hasta":12}]}
+{"_id":"plan-sesion","_type":"plan","nombre":"Por Sesión","precio":"$10.000","periodo":"una visita","destacado":false,"orden":1}
+{"_id":"plan-quincena","_type":"plan","nombre":"15 Días","precio":"$80.000","periodo":"media mensualidad","destacado":false,"orden":2}
+{"_id":"plan-mes1","_type":"plan","nombre":"1 Mes","precio":"$100.000","periodo":"por mes","destacado":true,"orden":3}
+{"_id":"plan-mes2","_type":"plan","nombre":"2 Meses","precio":"$180.000","periodo":"ahorras $20.000","destacado":false,"orden":4}
+{"_id":"plan-mes3","_type":"plan","nombre":"3 Meses","precio":"$240.000","periodo":"ahorras $60.000","destacado":false,"orden":5}
+{"_id":"plan-mes6","_type":"plan","nombre":"6 Meses","precio":"$450.000","periodo":"ahorras $150.000","destacado":false,"orden":6}
+{"_id":"servicio-gimnasio","_type":"servicio","nombre":"Gimnasio","descripcion":"Zona completa de pesas y máquinas para entrenar fuerza, resistencia y todo tu cuerpo. Entrena a tu ritmo con el acompañamiento de nuestro equipo.","icono":"pesas","orden":1}
+{"_id":"servicio-rumbaterapia","_type":"servicio","nombre":"Rumbaterapia","descripcion":"Quema calorías bailando al ritmo de la mejor música. Clases grupales llenas de energía para ponerte en forma sin darte cuenta.","icono":"baile","orden":2}
+{"_id":"servicio-boxeo","_type":"servicio","nombre":"Boxeo","descripcion":"Técnica, disciplina y acondicionamiento físico total. Entrena boxeo, libera estrés y lleva tu resistencia al siguiente nivel.","icono":"boxeo","orden":3}
+{"_id":"anuncio-1","_type":"anuncio","titulo":"Sé tu mejor versión — ¡inscríbete hoy!","orden":1,"imagen":{"_type":"image","_sanityAsset":"image@file://./public/anuncios/anuncio-4.jpg"}}
+{"_id":"anuncio-2","_type":"anuncio","titulo":"Promo entrena en compañía: 2 personas por $160.000","orden":2,"imagen":{"_type":"image","_sanityAsset":"image@file://./public/anuncios/anuncio-1.jpg"}}
+{"_id":"anuncio-3","_type":"anuncio","titulo":"Entrená con propósito","orden":3,"imagen":{"_type":"image","_sanityAsset":"image@file://./public/anuncios/anuncio-6.jpg"}}
+{"_id":"anuncio-4","_type":"anuncio","titulo":"Sé mejor que ayer","orden":4,"imagen":{"_type":"image","_sanityAsset":"image@file://./public/anuncios/anuncio-5.jpg"}}
+{"_id":"anuncio-5","_type":"anuncio","titulo":"Modo fútbol: hoy juega la selección","orden":5,"imagen":{"_type":"image","_sanityAsset":"image@file://./public/anuncios/anuncio-2.jpg"}}
+{"_id":"anuncio-6","_type":"anuncio","titulo":"Feliz Día del Padre","orden":6,"imagen":{"_type":"image","_sanityAsset":"image@file://./public/anuncios/anuncio-3.jpg"}}

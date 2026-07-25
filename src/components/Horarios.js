@@ -6,37 +6,38 @@ import { HiClock } from "react-icons/hi";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import FondoFoto from "@/components/FondoFoto";
-import { site } from "@/data/site";
+import { site as siteEstatico } from "@/data/site";
 
 // ¿Está abierto el gym en este momento? (según la hora del visitante)
-function estaAbierto() {
+function estaAbierto(bloquesSemana) {
   const ahora = new Date();
   const dia = ahora.getDay(); // 0=domingo, 6=sábado
   const hora = ahora.getHours() + ahora.getMinutes() / 60;
 
   let bloques = [];
-  if (dia >= 1 && dia <= 5) bloques = site.bloquesSemana.lunesAViernes;
-  else if (dia === 6) bloques = site.bloquesSemana.sabado;
+  if (dia >= 1 && dia <= 5) bloques = bloquesSemana.lunesAViernes || [];
+  else if (dia === 6) bloques = bloquesSemana.sabado || [];
 
   return bloques.some(([inicio, fin]) => hora >= inicio && hora < fin);
 }
 
 // Aviso en vivo "Abierto / Cerrado ahora"
-function EstadoAhora() {
+function EstadoAhora({ bloquesSemana }) {
   // Empieza en null para no chocar con el renderizado del servidor
   const [abierto, setAbierto] = useState(null);
 
   useEffect(() => {
-    setAbierto(estaAbierto());
-    const timer = setInterval(() => setAbierto(estaAbierto()), 60_000);
+    const revisar = () => setAbierto(estaAbierto(bloquesSemana));
+    revisar();
+    const timer = setInterval(revisar, 60_000);
     return () => clearInterval(timer);
-  }, []);
+  }, [bloquesSemana]);
 
   if (abierto === null) return null;
 
   return (
     <div className="mb-10 flex justify-center">
-      <span className="inline-flex items-center gap-2.5 rounded-full border border-rojo/50 bg-rojo/10 px-5 py-2 text-sm font-bold uppercase tracking-widest text-rojo">
+      <span className="inline-flex max-w-full items-center gap-2.5 rounded-full border border-rojo/50 bg-rojo/10 px-5 py-2 text-center text-xs font-bold uppercase tracking-widest text-rojo sm:text-sm">
         <span className="relative flex h-2.5 w-2.5">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rojo opacity-60" />
           <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-rojo" />
@@ -47,23 +48,27 @@ function EstadoAhora() {
   );
 }
 
-// Las tarjetas salen de site.horarios (src/data/site.js): el primer
-// bloque del día se muestra como "Mañana" y el segundo como "Tarde".
+// El primer bloque del día se muestra como "Mañana" y el segundo
+// como "Tarde". Los horarios llegan por props (del panel de Sanity)
+// o salen de src/data/site.js como respaldo.
 const decoracionBloques = [
   { icono: FaSun, etiqueta: "Mañana" },
   { icono: FaMoon, etiqueta: "Tarde" },
 ];
 
-const tarjetas = site.horarios.map((horario) => ({
-  dias: horario.dias,
-  cerrado: !!horario.cerrado,
-  bloques: horario.bloques.map((horas, i) => ({
-    ...decoracionBloques[i % decoracionBloques.length],
-    horas,
-  })),
-}));
+export default function Horarios({
+  horarios = siteEstatico.horarios,
+  bloquesSemana = siteEstatico.bloquesSemana,
+}) {
+  const tarjetas = horarios.map((horario) => ({
+    dias: horario.dias,
+    cerrado: !!horario.cerrado,
+    bloques: horario.bloques.map((horas, i) => ({
+      ...decoracionBloques[i % decoracionBloques.length],
+      horas,
+    })),
+  }));
 
-export default function Horarios() {
   return (
     <section
       id="horarios"
@@ -76,7 +81,7 @@ export default function Horarios() {
           Nuestros <span className="brochazo">horarios</span>
         </SectionTitle>
 
-        <EstadoAhora />
+        <EstadoAhora bloquesSemana={bloquesSemana} />
 
         <div className="grid gap-6 md:grid-cols-3">
           {tarjetas.map((tarjeta, i) => (

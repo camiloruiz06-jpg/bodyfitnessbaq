@@ -6,13 +6,16 @@ import { HiChevronLeft, HiChevronRight, HiSpeakerphone } from "react-icons/hi";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
-import { anuncios } from "@/data/anuncios";
-import { site } from "@/data/site";
+import { anuncios as anunciosEstaticos } from "@/data/anuncios";
+import { site as siteEstatico } from "@/data/site";
 import { whatsappLink, mensajes } from "@/lib/whatsapp";
 
 const INTERVALO_MS = 5000; // las imágenes pasan solas cada 5 segundos
 
-export default function Anuncios() {
+export default function Anuncios({
+  anuncios = anunciosEstaticos,
+  site = siteEstatico,
+}) {
   const [actual, setActual] = useState(0);
   const [direccion, setDireccion] = useState(1);
   const [pausado, setPausado] = useState(false);
@@ -46,7 +49,7 @@ export default function Anuncios() {
         </SectionTitle>
 
         {total === 0 ? (
-          <PlaceholderSinAnuncios />
+          <PlaceholderSinAnuncios site={site} />
         ) : (
           <Reveal>
             <div
@@ -169,7 +172,7 @@ function SlideAnuncio({ anuncio }) {
 
 // Si todavía no hay anuncios cargados, la sección no se rompe:
 // muestra este aviso elegante con CTAs.
-function PlaceholderSinAnuncios() {
+function PlaceholderSinAnuncios({ site }) {
   return (
     <Reveal>
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 border border-dashed border-borde bg-carbon/60 px-6 py-16 text-center">
@@ -191,7 +194,7 @@ function PlaceholderSinAnuncios() {
             <FaInstagram aria-hidden="true" /> {site.instagram.usuario}
           </a>
           <a
-            href={whatsappLink(mensajes.promo)}
+            href={whatsappLink(mensajes.promo, site.whatsapp)}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-rojo px-6 py-3 font-bold uppercase text-hueso transition-colors hover:bg-rojo-oscuro"

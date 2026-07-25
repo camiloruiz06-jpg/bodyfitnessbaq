@@ -48,8 +48,14 @@ Cada carpeta tiene un `README.txt` con instrucciones.
 - [ ] Fotos del gym para los fondos (`public/gym/`)
 - [ ] ¿Correo del gym? (opcional)
 
-## Fase 2 (preparado, no implementado)
+## Panel de administración (Sanity)
 
-Panel de administración con Sanity (como `babylonink-web`) para que el
-dueño edite anuncios, precios y horarios sin código. La estructura de
-`src/data/` está pensada para migrar fácil a ese esquema.
+El contenido editable (anuncios, planes, servicios, horarios, contacto)
+se administra en **`/studio`** (proyecto Sanity `eitd1kh4`, dataset
+`production`). Ver [MANUAL-PANEL.md](MANUAL-PANEL.md).
+
+- Los lectores están en `src/sanity/content.js`: si Sanity no responde
+  o está vacío, usan `src/data/*.js` como respaldo (la web no se rompe).
+- Esquemas del panel: `src/sanity/schemaTypes/`.
+- Contenido inicial: `scripts/seed.ndjson`
+  (importar con `npx sanity dataset import scripts/seed.ndjson production`).

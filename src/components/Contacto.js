@@ -6,19 +6,22 @@ import { HiClock } from "react-icons/hi";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import FondoFoto from "@/components/FondoFoto";
-import { site } from "@/data/site";
+import { site as siteEstatico } from "@/data/site";
 import { whatsappLink } from "@/lib/whatsapp";
-import { servicios } from "@/data/servicios";
+import { servicios as serviciosEstaticos } from "@/data/servicios";
 
-// Mapa por búsqueda de dirección (no requiere API key)
-const mapaSrc = `https://www.google.com/maps?q=${encodeURIComponent(
-  `${site.direccion}, Colombia`
-)}&output=embed`;
-
-export default function Contacto() {
+export default function Contacto({
+  site = siteEstatico,
+  servicios = serviciosEstaticos,
+}) {
   const [nombre, setNombre] = useState("");
   const [interes, setInteres] = useState("");
   const [mensaje, setMensaje] = useState("");
+
+  // Mapa por búsqueda de dirección (no requiere API key)
+  const mapaSrc = `https://www.google.com/maps?q=${encodeURIComponent(
+    `${site.direccion}, Colombia`
+  )}&output=embed`;
 
   function enviarWhatsApp(e) {
     e.preventDefault();
@@ -29,7 +32,11 @@ export default function Contacto() {
     ]
       .filter(Boolean)
       .join(" ");
-    window.open(whatsappLink(texto), "_blank", "noopener,noreferrer");
+    window.open(
+      whatsappLink(texto, site.whatsapp),
+      "_blank",
+      "noopener,noreferrer"
+    );
   }
 
   return (

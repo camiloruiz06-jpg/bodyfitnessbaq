@@ -1,11 +1,12 @@
 import { FaWhatsapp } from "react-icons/fa";
 import { whatsappLink, mensajes } from "@/lib/whatsapp";
+import { site as siteEstatico } from "@/data/site";
 
 // Botón flotante de WhatsApp visible en toda la página
-export default function WhatsAppFloat() {
+export default function WhatsAppFloat({ numero = siteEstatico.whatsapp }) {
   return (
     <a
-      href={whatsappLink(mensajes.general)}
+      href={whatsappLink(mensajes.general, numero)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"

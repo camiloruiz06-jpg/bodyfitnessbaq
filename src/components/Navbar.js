@@ -6,6 +6,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { FaWhatsapp } from "react-icons/fa";
 import Logo from "@/components/Logo";
 import { whatsappLink, mensajes } from "@/lib/whatsapp";
+import { site as siteEstatico } from "@/data/site";
 
 const enlaces = [
   { href: "#inicio", texto: "Inicio" },
@@ -16,7 +17,7 @@ const enlaces = [
   { href: "#contacto", texto: "Contacto" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ site = siteEstatico }) {
   const [abierto, setAbierto] = useState(false);
 
   return (
@@ -43,7 +44,7 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href={whatsappLink(mensajes.inscripcion)}
+              href={whatsappLink(mensajes.inscripcion, site.whatsapp)}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-rojo hover:bg-rojo-oscuro transition-colors text-hueso font-bold uppercase text-sm px-4 py-2"
@@ -89,7 +90,7 @@ export default function Navbar() {
               ))}
               <li className="py-3">
                 <a
-                  href={whatsappLink(mensajes.inscripcion)}
+                  href={whatsappLink(mensajes.inscripcion, site.whatsapp)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-rojo text-hueso font-bold uppercase px-4 py-3"

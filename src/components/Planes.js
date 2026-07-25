@@ -1,12 +1,16 @@
 import { FaWhatsapp } from "react-icons/fa";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
-import { planes } from "@/data/planes";
+import { planes as planesEstaticos } from "@/data/planes";
+import { site as siteEstatico } from "@/data/site";
 import { whatsappLink, mensajes } from "@/lib/whatsapp";
 
 // Lista de tarifas en un solo panel vertical, estilo flyer del gym:
 // tarjeta clara, precios en rojo y el plan destacado resaltado.
-export default function Planes() {
+export default function Planes({
+  planes = planesEstaticos,
+  whatsapp = siteEstatico.whatsapp,
+}) {
   return (
     <section id="planes" className="scroll-mt-20 px-4 py-20">
       <div className="mx-auto max-w-6xl">
@@ -32,7 +36,7 @@ export default function Planes() {
                     </span>
                   )}
                   <a
-                    href={whatsappLink(mensajes.plan(plan.nombre))}
+                    href={whatsappLink(mensajes.plan(plan.nombre), whatsapp)}
                     target="_blank"
                     rel="noopener noreferrer"
                     title={`Inscríbete: ${plan.nombre}`}
@@ -65,7 +69,7 @@ export default function Planes() {
 
             <div className="px-6 pb-6 pt-2">
               <a
-                href={whatsappLink(mensajes.inscripcion)}
+                href={whatsappLink(mensajes.inscripcion, whatsapp)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 bg-rojo px-6 py-4 font-bold uppercase tracking-wide text-hueso transition-colors hover:bg-rojo-oscuro"

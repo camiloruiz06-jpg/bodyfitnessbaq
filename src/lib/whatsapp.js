@@ -2,8 +2,10 @@ import { site } from "@/data/site";
 
 // Helper central de WhatsApp: TODOS los botones/CTAs del sitio
 // deben usar esta función para generar el link.
-export function whatsappLink(mensaje) {
-  const base = `https://wa.me/${site.whatsapp}`;
+// `numero` es opcional: si no se pasa, usa el de src/data/site.js
+// (los componentes pasan el número que viene del panel de Sanity).
+export function whatsappLink(mensaje, numero = site.whatsapp) {
+  const base = `https://wa.me/${numero}`;
   if (!mensaje) return base;
   return `${base}?text=${encodeURIComponent(mensaje)}`;
 }

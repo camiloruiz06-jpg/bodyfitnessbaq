@@ -4,7 +4,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import FondoFoto from "@/components/FondoFoto";
-import { servicios } from "@/data/servicios";
+import { servicios as serviciosEstaticos } from "@/data/servicios";
+import { site as siteEstatico } from "@/data/site";
 import { whatsappLink, mensajes } from "@/lib/whatsapp";
 
 const iconos = {
@@ -13,7 +14,10 @@ const iconos = {
   boxeo: GiBoxingGlove,
 };
 
-export default function Servicios() {
+export default function Servicios({
+  servicios = serviciosEstaticos,
+  whatsapp = siteEstatico.whatsapp,
+}) {
   return (
     <section
       id="servicios"
@@ -43,7 +47,7 @@ export default function Servicios() {
                     {servicio.descripcion}
                   </p>
                   <a
-                    href={whatsappLink(mensajes.servicio(servicio.nombre))}
+                    href={whatsappLink(mensajes.servicio(servicio.nombre), whatsapp)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-6 inline-flex items-center gap-2 font-bold uppercase text-rojo hover:underline"
