@@ -35,7 +35,7 @@ En **Configuración**:
 - **WhatsApp**: solo números empezando por 57 (ej: `573008945143`)
 - **Horarios**: cada bloque tiene hora de inicio y fin en formato 24h.
   Las medias horas van con `.5` → `14.5` = 2:30 p.m.
-  (Ej: bloque de 5 a 11 = 5:00 a.m. a 11:00 a.m.)
+  Hoy: L–V de `5` a `12` y de `14.5` a `20`; sábados de `7` a `12`.
 - **Publish** al terminar.
 
 ## ⏱️ ¿Cuándo se ven los cambios?
