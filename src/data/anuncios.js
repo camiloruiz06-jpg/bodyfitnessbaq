@@ -35,7 +35,7 @@ export const anuncios = [
   },
   {
     imagen: "/anuncios/anuncio-6.jpg",
-    alt: "Entrená con propósito — Gimnasio Body Fitness",
+    alt: "Entrená con propósito — Gimnasio Body Fitnes",
   },
   {
     imagen: "/anuncios/anuncio-5.jpg",
