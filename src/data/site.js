@@ -22,14 +22,15 @@ export const site = {
   // correo: "contacto@bodyfitness.com", // 👈 FALTA: correo del gym (opcional)
 
   // ----------------------------------------------------------
-  // HORARIOS (versión del flyer oficial)
-  // 👈 FALTA confirmar con el cliente si la mañana de L-V
-  //    termina a las 11:00 a.m. o a las 12:00 p.m.
+  // HORARIOS (confirmados: versión de la bio de Instagram)
+  // 👈 CAMBIAR aquí si el gym cambia el horario.
+  //    OJO: también hay que cambiarlo en `bloquesSemana` abajo.
+  //    (Si el panel /studio tiene horarios cargados, manda el panel.)
   // ----------------------------------------------------------
   horarios: [
     {
       dias: "Lunes a Viernes",
-      bloques: ["5:00 a.m. – 11:00 a.m.", "2:30 p.m. – 8:00 p.m."],
+      bloques: ["5:00 a.m. – 12:00 p.m.", "2:30 p.m. – 8:00 p.m."],
     },
     {
       dias: "Sábados",
@@ -43,7 +44,7 @@ export const site = {
   ],
 
   // Resumen corto para el footer / contacto
-  horarioResumen: "L–V: 5am–11am y 2:30pm–8pm · Sáb: 7am–12pm",
+  horarioResumen: "L–V: 5am–12pm y 2:30pm–8pm · Sáb: 7am–12pm",
 
   // ----------------------------------------------------------
   // Versión numérica de los horarios (para el aviso "Abierto /
@@ -53,7 +54,7 @@ export const site = {
   // ----------------------------------------------------------
   bloquesSemana: {
     lunesAViernes: [
-      [5, 11], // 5:00 a.m. – 11:00 a.m.
+      [5, 12], // 5:00 a.m. – 12:00 p.m.
       [14.5, 20], // 2:30 p.m. – 8:00 p.m.
     ],
     sabado: [

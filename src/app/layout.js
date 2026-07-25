@@ -24,6 +24,9 @@ const pacifico = Pacifico({
 });
 
 export const metadata = {
+  // Dirección del sitio: con esto los enlaces que se comparten
+  // (WhatsApp, Instagram, Facebook) arman bien la imagen de portada
+  metadataBase: new URL("https://bodyfitnessbaq.vercel.app"),
   title:
     "Gimnasio Body Fitness | Gimnasio, Rumbaterapia y Boxeo en Barranquilla",
   description:
