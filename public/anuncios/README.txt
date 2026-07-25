@@ -1,22 +1,21 @@
 CARPETA DE ANUNCIOS / PROMOS (carrusel de la página)
 ====================================================
 
-1. Guarda aquí las imágenes de las promos, por ejemplo:
+El carrusel acepta dos tipos de anuncio (se configuran en el
+archivo  src/data/anuncios.js  — ahí están los ejemplos):
 
-       anuncio-1.jpg
-       anuncio-2.jpg
-       promo-enero.png
+A) IMÁGENES TUYAS:
+   1. Guarda la imagen aquí, por ejemplo:
+          anuncio-1.jpg
+          promo-enero.png
+   2. Agrégala a la lista en src/data/anuncios.js:
+          { imagen: "/anuncios/anuncio-1.jpg", alt: "Descripción" },
 
-2. Luego abre el archivo  src/data/anuncios.js  y agrega cada
-   imagen a la lista siguiendo el ejemplo que hay ahí:
+B) PUBLICACIONES DE INSTAGRAM (fotos, videos o reels):
+   No hay que guardar nada aquí — solo copia el link del post
+   y agrégalo en src/data/anuncios.js:
+          { instagram: "https://www.instagram.com/p/ABC123xyz/" },
 
-       {
-         imagen: "/anuncios/anuncio-1.jpg",
-         alt: "Descripción de la promo",
-         link: "https://...",   // opcional
-       },
-
-3. Guarda y listo. El carrusel las muestra rotando cada 5 segundos.
-
-Para QUITAR un anuncio: borra su bloque de src/data/anuncios.js
-(y si quieres, borra también la imagen de esta carpeta).
+El carrusel pasa solo cada 5 segundos, tiene flechas y puntitos,
+y al llegar al último vuelve a empezar. Para QUITAR un anuncio,
+borra su bloque de src/data/anuncios.js.

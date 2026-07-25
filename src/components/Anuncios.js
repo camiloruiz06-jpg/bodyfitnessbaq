@@ -29,12 +29,14 @@ export default function Anuncios() {
   const siguiente = useCallback(() => irA(actual + 1, 1), [actual, irA]);
   const anterior = useCallback(() => irA(actual - 1, -1), [actual, irA]);
 
-  // Autoplay (se pausa al pasar el mouse por encima)
+  // Autoplay (se pausa al pasar el mouse por encima; los embeds de
+  // Instagram no avanzan solos por si están viendo un video)
   useEffect(() => {
     if (total < 2 || pausado) return;
+    if (anuncios[actual]?.instagram) return;
     const timer = setInterval(siguiente, INTERVALO_MS);
     return () => clearInterval(timer);
-  }, [siguiente, total, pausado]);
+  }, [siguiente, total, pausado, actual]);
 
   return (
     <section id="promos" className="scroll-mt-20 px-4 py-20">
@@ -123,6 +125,23 @@ export default function Anuncios() {
 }
 
 function SlideAnuncio({ anuncio }) {
+  // Publicación de Instagram (foto, video o reel) como embed oficial
+  if (anuncio.instagram) {
+    const base = anuncio.instagram.endsWith("/")
+      ? anuncio.instagram
+      : `${anuncio.instagram}/`;
+    return (
+      <iframe
+        src={`${base}embed`}
+        title="Publicación de Instagram de Gimnasio Body Fitness"
+        className="h-full w-full border-0 bg-carbon"
+        loading="lazy"
+        allowFullScreen
+        allow="encrypted-media"
+      />
+    );
+  }
+
   const imagen = (
     <img
       src={anuncio.imagen}
