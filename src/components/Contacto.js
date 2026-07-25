@@ -5,6 +5,7 @@ import { FaWhatsapp, FaMapMarkerAlt, FaInstagram } from "react-icons/fa";
 import { HiClock } from "react-icons/hi";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
+import FondoFoto from "@/components/FondoFoto";
 import { site } from "@/data/site";
 import { whatsappLink } from "@/lib/whatsapp";
 import { servicios } from "@/data/servicios";
@@ -32,8 +33,13 @@ export default function Contacto() {
   }
 
   return (
-    <section id="contacto" className="scroll-mt-20 bg-carbon/50 px-4 py-20">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="contacto"
+      className="relative scroll-mt-20 bg-carbon/50 px-4 py-20"
+    >
+      {/* Foto del gym de fondo (guardar como public/gym/contacto.jpg) */}
+      <FondoFoto src="/gym/contacto.jpg" opacidad={0.18} />
+      <div className="relative z-10 mx-auto max-w-6xl">
         <SectionTitle kicker="Visítanos o escríbenos">
           Ubicación y <span className="brochazo">contacto</span>
         </SectionTitle>
