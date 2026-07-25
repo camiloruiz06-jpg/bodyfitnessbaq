@@ -36,24 +36,10 @@ function EstadoAhora() {
 
   return (
     <div className="mb-10 flex justify-center">
-      <span
-        className={`inline-flex items-center gap-2.5 rounded-full border px-5 py-2 text-sm font-bold uppercase tracking-widest ${
-          abierto
-            ? "border-green-600/50 bg-green-950/40 text-green-400"
-            : "border-rojo/50 bg-rojo/10 text-rojo"
-        }`}
-      >
+      <span className="inline-flex items-center gap-2.5 rounded-full border border-rojo/50 bg-rojo/10 px-5 py-2 text-sm font-bold uppercase tracking-widest text-rojo">
         <span className="relative flex h-2.5 w-2.5">
-          <span
-            className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-60 ${
-              abierto ? "bg-green-400" : "bg-rojo"
-            }`}
-          />
-          <span
-            className={`relative inline-flex h-2.5 w-2.5 rounded-full ${
-              abierto ? "bg-green-400" : "bg-rojo"
-            }`}
-          />
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rojo opacity-60" />
+          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-rojo" />
         </span>
         {abierto ? "Abiertos ahora — ¡ven a entrenar!" : "Cerrados ahora"}
       </span>
